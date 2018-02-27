@@ -1,0 +1,38 @@
+swagger: '2.0'
+info:
+  version: 0.0.0
+  title: title
+  description: description
+  termsOfService: terms
+  contact:
+    name: Chin Tatt
+    url: https://github.com/tatt5749
+    email: teoh_5749@hotmail.com
+  license:
+    name: MIT
+    url: http://opensource.org/licenses/MIT
+paths:
+  /pet:
+    post:
+      tags:
+        - pet
+      summary: Add a new pet to the store
+      description: ''
+      operationId: addPet
+      consumes:
+        - application/json
+        - application/xml
+      produces:
+        - application/xml
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Pet object that needs to be added to the store
+          required: true
+          schema:
+            $ref: '#/definitions/Pet'
+      responses:
+        '405':
+          description: Invalid input
+
